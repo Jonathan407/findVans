@@ -122,6 +122,51 @@ class modelUsuario extends modelConexao {
         }
         return $this->resultado;
     }
+    
+    public function fazerLogin($email, $senha) {
+
+        #setar os valores
+        $this->setEmail($email);
+        $this->setSenha($senha);
+        echo 'Nome:'.$this->getEmail();
+        #montar a consultar (whre 1 serve para selecionar todos os registros)
+        $sql = "select * from tb_usuario where true";
+
+        #verificar se foi passado algum valor de $id_usuario    
+        if ($this->getEmail() != null) {
+            $sql.= " and email = :email";
+        }
+
+        #verificar se foi passado algum valor de $nome 
+        if ($this->getSenha() != null) {
+            $sql.= " and senha LIKE :senha ";
+        }
+
+        #executa consulta e constroi um array com o resultado da consulta
+        try {
+            $bd = $this->conectar();
+            $query = $bd->prepare($sql);
+
+           #verificar se foi passado algum valor de $nome 
+            if ($this->getEmail() != null) {
+                $query->bindValue(':email', $this->getEmail(), PDO::PARAM_STR);
+            }
+            
+             #verificar se foi passado algum valor de senha   
+            if ($this->getSenha() != null) {
+                $query->bindValue(':senha', $this->getSenha(), PDO::PARAM_INT);
+            }
+
+            $query->execute();
+
+            $this->resultado = $query->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            $e->getMessage();
+
+            $this->resultado = null;
+        }
+        return $this->resultado;
+    }
 
     /**
      * Método utilizado para inserir um usuário

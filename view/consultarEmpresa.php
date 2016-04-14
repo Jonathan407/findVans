@@ -1,5 +1,4 @@
 <?php
-
 #iniciar_sessao
 session_start();
 
@@ -20,8 +19,8 @@ if (isset($_POST["consultar"])) {
     #passa o id e nome para consultar
     $empresas = $objce->consultarEmpresa($_POST["dados"]);
 } else {
-    #mostrar todos os usuários
-    $empresas = $objce->consultarEmpresa($_POST["dados"]);
+    #mostrar todos as empresas cadastradas
+    $empresas = $objce->consultarEmpresas(null, null);
 }
 
 #verificar se o botão "alterar" foi acionado
@@ -35,6 +34,7 @@ if (isset($_POST["alterar"])) {
 #verificar se o botão "excluir" foi acionado
 if (isset($_POST["excluir"])) {
     #passa o id do empresa para o controle realizar a exclusão
+    echo 'Acessando Exclusão';
     $objce->excluirEmpresa($_POST["dados"]);
 }
 ?>
@@ -162,7 +162,7 @@ if (isset($_POST["excluir"])) {
             ?>
 
             <?php
-            #foreach para listar os dados do usuário e definica cada modal para alterar
+            #foreach para listar os dados da empresa é definida cada modal para alterar
             foreach ($empresas as $item) {
                 ?>
                 <!-- modal de exluir -->
@@ -176,12 +176,11 @@ if (isset($_POST["excluir"])) {
                             <div class="modal-body">
 
                                 <?php
-                                #pegar o valor do id do usuário
+                                #pegar o valor do id da empresa
                                 $dados[id_empresa][0] = $item[id_empresa];
-
-                                #método para selecionar o usuário desejado
+                                #método para selecionar a empresa desejada
                                 $empresas_excluir = $objce->consultarEmpresa($dados);
-                                #inclui a view alterar usuário
+                                #inclui a view alterar empresa
                                 include 'excluirEmpresa.php';
                                 ?>       
                             </div>

@@ -61,7 +61,7 @@ if (isset($_POST["inserir"])) {
                             <label for="nome">Nome</label>
                             <input class="form-control" required type="text" name="dados[nome][]" id="nome" />
                             <label for="cpf">E-mail</label>
-                            <input class="form-control" required id="cpf" name="dados[email][]" type="text"  title="Digite seu E-mail" maxlength="58">
+                            <input class="form-control" required id="email" name="dados[email][]" type="text"  title="Digite seu E-mail" maxlength="58">
                             <label for="telefone">Telefone</label>
                             <input class="form-control" id="telefone" name="dados[telefone][]" type="text"  title="Digite seu telefone" maxlength="14">
                             <label for="senha">Senha</label>

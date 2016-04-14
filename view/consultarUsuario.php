@@ -21,7 +21,7 @@ if (isset($_POST["consultar"])) {
     $empresas = $objce->consultarUsuario($_POST["dados"]);
 } else {
     #mostrar todos os usuários
-    $empresas = $objce->consultarUsuario($_POST["dados"]);
+    $usuarios = $objce->consultarUsuario($_POST["dados"]);
 }
 
 #verificar se o botão "alterar" foi acionado
@@ -29,7 +29,7 @@ if (isset($_POST["alterar"])) {
     #passa os novos dados do usuário para o controle realizar a alteração
     $objce->alterarUsuario($_POST["dados"]);
     #mostrar dados do usuários selecionado depois de alterado
-    $empresas = $objce->consultarUsuario(null);
+    $usuarios = $objce->consultarUsuario(null);
 }
 
 #verificar se o botão "excluir" foi acionado
@@ -106,7 +106,7 @@ if (isset($_POST["excluir"])) {
                                     <tbody>
                                         <?php
                                         #foreach para listar os dados do usuario
-                                        foreach ($empresas as $item) {
+                                        foreach ($usuarios as $item) {
                                             echo "<tr>";
                                             echo "<td> {$item[id_usuario]} </td>";
                                             echo "<td> {$item[nome]} </td>";
@@ -128,7 +128,7 @@ if (isset($_POST["excluir"])) {
 
             <?php
             #foreach para listar os dados do usuário e definica cada modal para alterar
-            foreach ($empresas as $item) {
+            foreach ($usuarios as $item) {
                 ?>
                 <!-- modal de alterar -->
                 <div class="modal fade" id="alterar<?php echo $item[id_usuario] ?>" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
@@ -161,7 +161,7 @@ if (isset($_POST["excluir"])) {
 
             <?php
             #foreach para listar os dados do usuário e definica cada modal para alterar
-            foreach ($empresas as $item) {
+            foreach ($usuarios as $item) {
                 ?>
                 <!-- modal de exluir -->
                 <div class="modal fade" id="excluir<?php echo $item[id_usuario] ?>" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
@@ -178,7 +178,7 @@ if (isset($_POST["excluir"])) {
                                 $dados[id_usuario][0] = $item[id_usuario];
 
                                 #método para selecionar o usuário desejado
-                                $empresas_excluir = $objce->consultarUsuario($dados);
+                                $usuarios_excluir = $objce->consultarUsuario($dados);
                                 #inclui a view alterar usuário
                                 include 'excluirUsuario.php';
                                 ?>       

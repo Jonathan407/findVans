@@ -97,7 +97,7 @@ class modelEmpresa extends modelConexao {
 
         #verificar se foi passado algum valor de $id
         if ($this->getId() != null) {
-            $sql.="and id_empresa = :id_empresa";
+            $sql.=" and id_empresa = :id_empresa";
         }
 
         #verificar se foi passado algum valor de $nome 
@@ -201,6 +201,7 @@ class modelEmpresa extends modelConexao {
 
         #realizar a blidagem dos dados
         try {
+            echo 'Alterou';
             $bd = $this->conectar();
             $query = $bd->prepare($sql);
             $query->bindValue(':id_empresa', $this->getId(), PDO::PARAM_INT);
@@ -209,10 +210,11 @@ class modelEmpresa extends modelConexao {
             $query->bindValue(':email', $this->getEmail(), PDO::PARAM_STR);
             $query->bindValue(':telefone', $this->getTelefone(), PDO::PARAM_STR);
             $query->bindValue(':endereco', $this->getEndereco(), PDO::PARAM_STR);
-
+            echo "query".query;
             $query->execute();
             return true;
         } catch (PDOException $e) {
+             echo 'Erro ao alterar';
             echo $e->getMessage();
             return false;
         }

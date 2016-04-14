@@ -1,6 +1,6 @@
 ﻿<?php
 #iniciar_sessao
-session_start();
+//session_start();
 
 #carregar as classes dinamicamente
 include_once 'autoload.php';
@@ -31,6 +31,12 @@ class ControlEmpresa extends ControlGeral {
         #extração de dados do empresa
         $nome = $dados[nome][0];
         $id = $dados[id_empresa][0];
+        $objEmpresa = new modelEmpresa();
+        return $listaEmpresa = $objEmpresa->consultarEmpresa($id, $nome);
+    }
+    
+    function consultarEmpresas($id, $nome) {
+
         $objEmpresa = new modelEmpresa();
         return $listaEmpresa = $objEmpresa->consultarEmpresa($id, $nome);
     }
@@ -81,7 +87,7 @@ class ControlEmpresa extends ControlGeral {
      * @param String $nome nome do empresa
      * @param String $email E-mail do empresa
      * @param String $telefone telefone do empresa
-     * @param String $senha do empresa
+     * @param String $empresa do empresa
      * @return Boolean retorna TRUE se os dados forem salvos com sucesso
      */
     function alterarEmpresa($dados) {
@@ -117,10 +123,10 @@ class ControlEmpresa extends ControlGeral {
      * @return Boolean retorna TRUE se os dados for excluído sucesso
      */
     function excluirEmpresa($dados) {
-
+       
         #extração de dados do empresa
         $id = $dados[id_empresa][0];
-        
+     
         #invocar métódo  e passar parâmetros
         $objEmpresa = new modelEmpresa();
 

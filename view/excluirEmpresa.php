@@ -4,7 +4,7 @@ foreach ($empresas_excluir as $item_excluir) {
     ?>
     <fieldset>
         <form id="empresa" name="empresa" method="post" action="">
-            <!-- dados do usuário -->
+            <!-- dados da empresa -->
             <label for="id">Código</label>
             <input class="form-control"name="id" type="text" readonly="true" id="id" value="<?php echo $item_excluir[id_empresa]; ?>" />
             <label for="nome">Nome</label>
@@ -19,7 +19,7 @@ foreach ($empresas_excluir as $item_excluir) {
             <input class="form-control"required id="endereco" readonly="true" name="endereco" value="<?php echo $item_excluir[endereco]; ?>" type="date" title="Digite seu Endereço: " maxlength="200">
             
           
-            <!-- input oculto para informar o id do usuário-->
+            <!-- input oculto para informar o id da empresa-->
             <input type="hidden" name="dados[id_empresa][]" value="<?php echo $item_excluir[id_empresa]; ?>" >
             </br>
             <!-- botao para submeter o formulário -->
