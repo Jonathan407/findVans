@@ -194,7 +194,7 @@ class modelEmpresa extends modelConexao {
         $this->setCnpj($cnpj);
         $this->setEmail($email);
         $this->setTelefone($telefone);
-        $this->setSenha($endereco);
+        $this->setEndereco($endereco);
 
         #montar a consulta
         $sql = "UPDATE tb_empresa SET nome = :nome, cnpj = :cnpj, email = :email, telefone = :telefone , endereco = :endereco WHERE id_empresa = :id_empresa";
