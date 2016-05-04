@@ -130,17 +130,7 @@ class modelUsuario extends modelConexao {
         $this->setSenha($senha);
         echo 'Nome:'.$this->getEmail();
         #montar a consultar (whre 1 serve para selecionar todos os registros)
-        $sql = "select * from tb_usuario where true";
-
-        #verificar se foi passado algum valor de $id_usuario    
-        if ($this->getEmail() != null) {
-            $sql.= " and email = :email";
-        }
-
-        #verificar se foi passado algum valor de $nome 
-        if ($this->getSenha() != null) {
-            $sql.= " and senha LIKE :senha ";
-        }
+        $sql = "select * from tb_usuario where email = :email and senha LIKE :senha";
 
         #executa consulta e constroi um array com o resultado da consulta
         try {

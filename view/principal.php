@@ -2,6 +2,9 @@
 #iniciar_sessao
 session_start();
 
+#carrega as classes automaticamente
+include_once 'autoload.php';
+
 #função para resolver problema de header
 ob_start();
 
