@@ -11,7 +11,7 @@ foreach ($usuarios_alterar as $item_alterar) {
             <label for="nome">Nome</label>
             <input class="form-control" required type="text" name="dados[nome][]" id="nome" value="<?php echo $item_alterar[nome]; ?>"/>
             <label for="email">E-mail</label>
-            <input class="form-control" required id="email" name="dados[email][]" type="text" value="<?php echo $item_alterar[email]; ?>" title="Digite seu E-mail" maxlength="58">
+            <input class="form-control" required id="email" name="dados[email][]" type="text" value="<?php echo $item_alterar[email]; ?>" title="Digite seu E-mail" maxlength="58" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" >
             <label for="telefone">Telefone</label>
             <input class="form-control" id="telefone" name="dados[telefone][]" type="text" value="<?php echo $item_alterar[telefone]; ?>" title="Digite seu telefone" maxlength="14">
             <label for="senha">Senha</label>

@@ -63,7 +63,7 @@ if (isset($_POST["inserir"])) {
                             <label for="cnpj">Cnpj</label>
                             <input class="form-control" required id="cnpj" name="dados[cnpj][]" type="text" title="Digite seu CNPJ"/>
                             <label for="cpf">E-mail</label>
-                            <input class="form-control" required id="cpf" name="dados[email][]" type="text"  title="Digite seu E-mail" maxlength="58">
+                            <input class="form-control" required id="cpf" name="dados[email][]" type="text"  title="Digite seu E-mail" maxlength="58" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
                             <label for="telefone">Telefone</label>
                             <input class="form-control" id="telefone" name="dados[telefone][]" type="text"  title="Digite seu telefone" maxlength="14">
                             <label for="endereco">Endereco</label>

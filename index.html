@@ -20,7 +20,7 @@
                         <form action="control/open.php" method="post">
                             <div class="form-group">
                                 <label for="email">Email</label>
-                                <input type="email" class="form-control" name="dados[email][]" id="email" placeholder="Email"  required title="Digite seu E-mail">
+                                <input type="email" class="form-control" name="dados[email][]" id="email" placeholder="Email"  required title="Digite seu E-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
                             </div>
                             <div class="form-group">
                                 <label for="senha">Senha</label>
