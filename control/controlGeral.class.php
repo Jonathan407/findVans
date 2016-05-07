@@ -106,8 +106,8 @@ class ControlGeral {
                 echo' <li class = "dropdown">';
                 echo'  <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown" role = "button" aria-haspopup = "true" aria-expanded = "false"> Empresa<span class = "caret"></span></a>';
                 echo'  <ul class = "dropdown-menu">';
-                echo' <li><a href = "modulo.php?modulo=empresa&menu=consultar"><i class="icon-large icon-search"></i>Consultar</a></li>';
-                echo'  <li><a href = "modulo.php?modulo=empresa&menu=inserir">Inserir</a></li>';
+                echo' <li><a href = "modulo.php?empresa=&menu=consultar"><i class="icon-large icon-search"></i>Consultar</a></li>';
+                echo'  <li><a href = "modulo.php?empresa=usuario&menu=inserir">Inserir</a></li>';
                 echo' </ul>';
                 echo' </li>';
 
