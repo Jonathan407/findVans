@@ -40,21 +40,11 @@ if (isset($_POST["excluir"])) {
 ?>
 
 <html lang="pt-br">
-    <head>
-        <!-- define a codificação do HTML -->
-        <meta charset="utf-8">
-
-        <!-- define a o titulo do HMTL -->
-        <title>Sistema Find Vans</title>
-
-        <!-- Link para o CSS do bootstrap -->
-        <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-        <!-- Link para o CSS do bootstrap (menu) -->
-        <link href="../bootstrap/css/navbar.css" rel="stylesheet">
-
-    </head>
     <body>
+        <?php
+            #Cabeçalho
+            $objce->header();
+        ?>
 
         <!-- Link para o JQuery do bootstrap -->
         <script src="../bootstrap/js/jquery.min.js"></script>

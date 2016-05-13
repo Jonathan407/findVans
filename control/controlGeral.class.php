@@ -71,6 +71,31 @@ class ControlGeral {
             echo $alerta;
         }
     }
+    
+    function header(){
+        echo '<head>
+        <!-- define a codificação do HTML -->
+        <meta charset="utf-8">
+
+        <!-- define a o titulo do HMTL -->
+        <title>Find Vans</title>
+
+        <!-- Link para o CSS do bootstrap -->
+        <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Link para o CSS do bootstrap (menu) -->
+        <link href="../bootstrap/css/navbar.css" rel="stylesheet">
+            <style> 
+            body{
+                background: yellow;
+                padding-top: 5%;
+                padding-bottom: 40px;
+            }
+        </style>
+
+    </head>';
+        
+    }
 
     /**
      * Método utilizado para mostrar o menu do sistema
@@ -79,7 +104,7 @@ class ControlGeral {
      */
     function menu() {
         echo' <!--Static navbar -->';
-        echo' <nav class = "navbar navbar-default">';
+        echo' <nav class = "navbar navbar-inverse navbar-fixed-top">';
         echo' <div class = "container-fluid">';
         echo' <div class = "navbar-header">';
         echo' <button type = "button" class = "navbar-toggle collapsed" data-toggle = "collapse" data-target = "#navbar" aria-expanded = "false" aria-controls = "navbar">';
@@ -106,8 +131,8 @@ class ControlGeral {
                 echo' <li class = "dropdown">';
                 echo'  <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown" role = "button" aria-haspopup = "true" aria-expanded = "false"> Empresa<span class = "caret"></span></a>';
                 echo'  <ul class = "dropdown-menu">';
-                echo' <li><a href = "modulo.php?empresa=&menu=consultar"><i class="icon-large icon-search"></i>Consultar</a></li>';
-                echo'  <li><a href = "modulo.php?empresa=usuario&menu=inserir">Inserir</a></li>';
+                echo' <li><a href = "modulo.php?modulo=empresa&menu=consultar"><i class="icon-large icon-search"></i>Consultar</a></li>';
+                echo'  <li><a href = "modulo.php?modulo=empresa&menu=inserir">Inserir</a></li>';
                 echo' </ul>';
                 echo' </li>';
 

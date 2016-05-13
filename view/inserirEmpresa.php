@@ -23,20 +23,7 @@ if (isset($_POST["inserir"])) {
 ?>
 
 <html lang="pt-br">
-    <head>
-        <!-- define a codificação do HTML -->
-        <meta charset="utf-8">
 
-        <!-- define a o titulo do HMTL -->
-        <title>Sistema Find Vans</title>
-
-        <!-- Link para o CSS do bootstrap -->
-        <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-        <!-- Link para o CSS do bootstrap (menu) -->
-        <link href="../bootstrap/css/navbar.css" rel="stylesheet">
-
-    </head>
     <body>
 
         <!-- Link para o JQuery do bootstrap -->
@@ -47,6 +34,9 @@ if (isset($_POST["inserir"])) {
         <div class="container">
             <!-- inserir o menu -->
             <?php
+            #cabeçalho
+            $objcc->header();
+            
             #mostrar o menu
             $objcc->menu();
             #$objcc->alerta($_SESSION['msg']);

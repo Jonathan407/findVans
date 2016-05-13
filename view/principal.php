@@ -28,6 +28,14 @@ $objcg = new ControlGeral();
 
         <!-- Link para o CSS do bootstrap (menu) -->
         <link href="../bootstrap/css/navbar.css" rel="stylesheet">
+            <style> 
+            body{
+                background: yellow;
+            }
+            form_login{
+                width: 26%;
+            }
+        </style>
 
     </head>
     <body>
