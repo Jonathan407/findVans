@@ -57,7 +57,7 @@ if (isset($_POST["inserir"])) {
                             <label for="senha">Senha</label>
                             <input class="form-control" id="senha" name="dados[senha][]" type="password"  title="Digite sua senha" maxlength="14">
                             </br>
-                            <button type="submit" name="inserir" class="btn btn-danger" style="width: 100%;"><span class="glyphicon bg-success"></span>Inserir</button>
+                            <button type="submit" name="inserir" class="btn btn-primary" style="width: 100%;"><span class="glyphicon bg-success"></span>Inserir</button>
                         </div>
                     </form>
                 </fieldset> 

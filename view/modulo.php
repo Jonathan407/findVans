@@ -33,6 +33,19 @@ switch ($modulo) {
                 break;
         }
         break;
+    
+     case 'itinerario':
+        switch ($menu) {
+            #menu consultar
+            case 'consultar':
+                include 'consultarItinerario.php';
+                break;
+            #menu inserir
+            case 'inserir':
+                include 'inserirItinerario.php';
+                break;
+        }
+        break;
 
     default:
         #menu padrão

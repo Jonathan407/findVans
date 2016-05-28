@@ -87,7 +87,7 @@ class ControlGeral {
         <link href="../bootstrap/css/navbar.css" rel="stylesheet">
             <style> 
             body{
-                background: yellow;
+                background: #ffffff;
                 padding-top: 5%;
                 padding-bottom: 40px;
             }
@@ -127,14 +127,23 @@ class ControlGeral {
         echo' </ul>';
         echo' </li>';
 
-        #menu exemplo
-                echo' <li class = "dropdown">';
-                echo'  <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown" role = "button" aria-haspopup = "true" aria-expanded = "false"> Empresa<span class = "caret"></span></a>';
-                echo'  <ul class = "dropdown-menu">';
-                echo' <li><a href = "modulo.php?modulo=empresa&menu=consultar"><i class="icon-large icon-search"></i>Consultar</a></li>';
-                echo'  <li><a href = "modulo.php?modulo=empresa&menu=inserir">Inserir</a></li>';
-                echo' </ul>';
-                echo' </li>';
+        #menu empresa
+        echo' <li class = "dropdown">';
+        echo'  <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown" role = "button" aria-haspopup = "true" aria-expanded = "false"> Empresa<span class = "caret"></span></a>';
+        echo'  <ul class = "dropdown-menu">';
+        echo' <li><a href = "modulo.php?modulo=empresa&menu=consultar"><i class="icon-large icon-search"></i>Consultar</a></li>';
+        echo'  <li><a href = "modulo.php?modulo=empresa&menu=inserir">Inserir</a></li>';
+        echo' </ul>';
+        echo' </li>';
+        
+         #menu Itinerario
+        echo' <li class = "dropdown">';
+        echo'  <a href = "#" class = "dropdown-toggle" data-toggle = "dropdown" role = "button" aria-haspopup = "true" aria-expanded = "false"> Itinerario<span class = "caret"></span></a>';
+        echo'  <ul class = "dropdown-menu">';
+        echo' <li><a href = "modulo.php?modulo=itinerario&menu=consultar"><i class="icon-large icon-search"></i>Consultar</a></li>';
+        echo'  <li><a href = "modulo.php?modulo=itinerario&menu=inserir">Inserir</a></li>';
+        echo' </ul>';
+        echo' </li>';
 
         echo' </ul>';
         echo'<ul class="nav navbar-nav navbar-right">';

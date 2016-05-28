@@ -15,7 +15,7 @@ class modelVeiculo extends modelConexao {
      * Atributos da classe
      */
     private $id;
-    private $id_empresa;
+    private $responsavel;
     private $marca;
     private $modelo;
     private $categoria;
@@ -28,8 +28,8 @@ class modelVeiculo extends modelConexao {
         return $this->id;
     }
 
-    public function getEmpresa() {
-        return $this->id_empresa;
+    public function getResponsavel() {
+        return $this->responsavel;
     }
 
     public function getMarca() {
@@ -52,8 +52,8 @@ class modelVeiculo extends modelConexao {
         $this->id = $id;
     }
 
-    public function setEmpresa($id_empresa) {
-        $this->id_empresa = $id_empresa;
+    public function setResponsavel($resposanvel) {
+        $this->responsavel = $resposanvel;
     }
 
     public function setMarca($marca) {
@@ -79,11 +79,11 @@ class modelVeiculo extends modelConexao {
         
     }
 
-    public function consultarVeciculo($id, $id_empresa) {
+    public function consultarVeciculo($id, $responsavel) {
 
         #setar valores
         $this->setId($id);
-        $this->setEmpresa($id_empresa);
+        $this->setResponsavel($responsavel);
 
         #montar a consultar (whre 1 serve para selecionar todos os registros)
         $sql = "select * from tb_veiculo where true";
@@ -94,8 +94,8 @@ class modelVeiculo extends modelConexao {
         }
 
          
-        if ($this->getEmpresa() != null) {
-            $sql.= " and id_empresa LIKE :id_empresa ";
+        if ($this->getResponsavel() != null) {
+            $sql.= " and responsavel LIKE :responsavel ";
         }
 
         #execulta a consulta e constroi um array com o resultado da consulta
@@ -109,9 +109,9 @@ class modelVeiculo extends modelConexao {
             }
 
             #verificar se foi passado algum valor de $nome
-            if ($this->getEmpresa() != NULL) {
-                $this->setEmpresa("%" . $id_empresa . "%");
-                $query->bindValue(':$id_empresa', $this->getEmpresa(), PDO::PARAM_STR);
+            if ($this->getResponsavel() != NULL) {
+                $this->setResponsavel("%" . $responsavel . "%");
+                $query->bindValue(':responsanvel', $this->getResponsavel(), PDO::PARAM_STR);
             }
 
             $query->execute();
@@ -126,24 +126,24 @@ class modelVeiculo extends modelConexao {
     }
 
  
-    function inserirVeiculo($id_empresa, $marca, $modelo, $categoria, $descricao) {
+    function inserirVeiculo($resposnavel, $marca, $modelo, $categoria, $descricao) {
 
         #setar os dados
-        $this->setEmpresa($id_empresa);
+        $this->setResponsavel($resposnavel);
         $this->setMarca($marca);
         $this->setModelo($modelo);
         $this->setCategoria($categoria);
         $this->setDescricao($descricao);
 
         #montar a consulta
-        $sql = "INSERT INTO tb_veiculo (id_veiculo, resposanvel, marca, modelo, categoria, descricao) "
-                . "VALUES (null,:id_empresa,:marca,:modelo,:categoria,:descricao)";
+        $sql = "INSERT INTO tb_veiculo (id, resposanvel, marca, modelo, categoria, descricao) "
+                . "VALUES (null,:responsavel,:marca,:modelo,:categoria,:descricao)";
 
         #realizar a blidagem dos dados
         try {
             $bd = $this->conectar();
             $query = $bd->prepare($sql);
-            $query->bindValue(':id_empresa', $this->getEmpresa(), PDO::PARAM_STR);
+            $query->bindValue(':resposanvel', $this->getResponsavel(), PDO::PARAM_STR);
             $query->bindValue(':marca', $this->getMarca(), PDO::PARAM_STR);
             $query->bindValue(':modelo', $this->getModelo(), PDO::PARAM_STR);
             $query->bindValue(':categoria', $this->getCategoria(), PDO::PARAM_STR);
@@ -162,21 +162,21 @@ class modelVeiculo extends modelConexao {
 
         #setar os dados
         $this->setId($id);
-        $this->setEmpresa($resposnavel);
+        $this->setResponsavel($resposnavel);
         $this->setMarca($marca);
         $this->setModelo($modelo);
         $this->setCategoria($categoria);
         $this->setDescricao($descricao);
 
         #montar a consulta
-        $sql = "UPDATE tb_veiculo SET id = :id, id_empresa = :id_empresa, marca = :marca, modelo = :modelo, categoria = :categoria , descricao = :descricao WHERE id = :id";
+        $sql = "UPDATE tb_veiculo SET id = :id, responsavel = :responsavel, marca = :marca, modelo = :modelo, categoria = :categoria , descricao = :descricao WHERE id = :id";
 
         #realizar a blidagem dos dados
         try {
             $bd = $this->conectar();
             $query = $bd->prepare($sql);
             $query->bindValue(':id', $this->getId(), PDO::PARAM_INT);
-            $query->bindValue(':id_empresa', $this->getEmpresa(), PDO::PARAM_STR);
+            $query->bindValue(':responsavel', $this->getResponsavel(), PDO::PARAM_STR);
             $query->bindValue(':marca', $this->getCnpj(), PDO::PARAM_STR);
             $query->bindValue(':modelo', $this->getEmail(), PDO::PARAM_STR);
             $query->bindValue(':categoria', $this->getTelefone(), PDO::PARAM_STR);

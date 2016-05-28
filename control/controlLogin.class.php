@@ -20,16 +20,17 @@ ob_start();
 #carrega as classes automaticamente
 include_once '../view/autoload.php';
 
-class open {
+class controlLogin {
 
     function autentica($dados) {
-        $login = $dados[email][0];
+        
+        $email = $dados[email][0];
         $senha = $dados[senha][0];
 
         $objUsuario = new modelUsuario();
 
 
-        $result = $objUsuario->fazerLogin($login, $senha);
+        $result = $objUsuario->fazerLogin($email, $senha);
 
         if (count($result) > 0) {
             $_SESSION['email'];

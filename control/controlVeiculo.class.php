@@ -34,7 +34,7 @@ class ControlVeiculo extends ControlGeral {
         echo 'InserirVeiculo';
         
         $id_veiculo = $dados[id_veiculo][0];
-        $id_empresa = $dados[id_empresa][0];
+        $responsavel = $dados[responsavel][0];
         $marca = $dados[marca][0];
         $modelo = $dados[modelo][0];
         $categoria = $dados[categoria][0];
@@ -50,7 +50,7 @@ class ControlVeiculo extends ControlGeral {
       //  $dtNascimento = $this->dataAmericano($dtNascimento);
 
         #se for válido invocar o método de iserir
-        if ($objVeiculo->inserirVeiculo($id_veiculo, $id_empresa, $marca, $modelo, $categoria, $descricao) == true) {
+        if ($objVeiculo->inserirVeiculo($id_veiculo, $responsavel, $marca, $modelo, $categoria, $descricao) == true) {
             #se for inserido com sucesso mostrar a mensagem
             $_SESSION['msg'] = "Inserido com sucesso!";
             #redirecionar
@@ -68,7 +68,7 @@ class ControlVeiculo extends ControlGeral {
     function alterarVeiculo($dados) {
         #extração de dados do veiculo
         $id_veiculo = $dados[id_veiculo][0];
-        $id_empresa = $dados[id_empresa][0];
+        $responsavel = $dados[responsavel][0];
         $marca = $dados[marca][0];
         $modelo = $dados[modelo][0];
         $categoria = $dados[categoria][0];

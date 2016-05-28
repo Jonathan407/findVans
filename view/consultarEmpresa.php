@@ -42,7 +42,7 @@ if (isset($_POST["excluir"])) {
 <html lang="pt-br">
     <body>
         <?php
-            #Cabeçalho
+            #header
             $objce->header();
         ?>
 
@@ -50,7 +50,7 @@ if (isset($_POST["excluir"])) {
         <script src="../bootstrap/js/jquery.min.js"></script>
         <script src="../bootstrap/js/bootstrap.min.js"></script>
         <script src="../bootstrap/js/ie10-viewport-bug-workaround.js"></script>
-        <script src="http://maps.googleapis.com/maps/api/js"></script>
+        <!--<script src="http://maps.googleapis.com/maps/api/js"></script>-->
 
         <div class="container">
             <!-- inserir o menu -->

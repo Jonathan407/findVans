@@ -168,17 +168,14 @@ class modelUsuario extends modelConexao {
      * @return Boolean retorna TRUE se os dados forem salvos com sucesso
      */
     function inserirUsuario($nome, $email, $telefone, $senha) {
-
         #setar os dados
         $this->setNome($nome);
         $this->setEmail($email);
         $this->setTelefone($telefone);
         $this->setSenha($senha);
-        echo $this->getTelefone();
 
         #montar a consulta
-        $sql = "INSERT INTO tb_usuario (id_usuario, nome, email, telefone, senha) "
-                . "VALUES (null,:nome,:email,:telefone,:senha)";
+        $sql = "INSERT INTO tb_usuario (id_usuario, nome, email, telefone, senha) " . "VALUES (null,:nome,:email,:telefone,:senha)";
 
         #realizar a blidagem dos dados
         try {

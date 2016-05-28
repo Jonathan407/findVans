@@ -71,7 +71,6 @@ class ControlEmpresa extends ControlGeral {
             $_SESSION['msg'] = "Inserido com sucesso!";
             #redirecionar
             header("location: ../view/modulo.php?modulo=empresa&menu=consultar");
-            echo 'Inserido com sucesso!';
         } else {
             $_SESSION['msg'] = "Erro ao inserir!";
             #redirecionar

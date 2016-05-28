@@ -59,7 +59,7 @@ if (isset($_POST["inserir"])) {
                             <label for="endereco">Endereco</label>
                             <input class="form-control" id="endereco" name="dados[endereco][]" type="text"  title="Digite sua Endereço" maxlength="180">
                             </br>
-                            <button type="submit" name="inserir" class="btn btn-danger" style="width: 100%;"><span class="glyphicon bg-success"></span>Inserir</button>
+                            <button type="submit" name="inserir" class="btn btn-primary" style="width: 100%;"><span class="glyphicon bg-success"></span>Inserir</button>
                         </div>
                     </form>
                 </fieldset> 

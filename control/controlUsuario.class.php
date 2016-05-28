@@ -56,20 +56,17 @@ class ControlUsuario extends ControlGeral {
         $objUsuario = new modelUsuario();
 
         #tratar a data de nascimento
-      //  $dtNascimento = $this->dataAmericano($dtNascimento);
-
+        //  $dtNascimento = $this->dataAmericano($dtNascimento);
         #se for válido invocar o método de iserir
         if ($objUsuario->inserirUsuario($nome, $email, $telefone, $senha) == true) {
             #se for inserido com sucesso mostrar a mensagem
             $_SESSION['msg'] = "Inserido com sucesso!";
             #redirecionar
             header("location: ../view/modulo.php?modulo=usuario&menu=consultar");
-            echo 'Inserido com sucesso!';
         } else {
             $_SESSION['msg'] = "Erro ao inserir!";
             #redirecionar
-           // header("location: ../view/modulo.php?modulo=usuario&menu=consultar");
-            echo 'Erro ao inserir!';
+            header("location: ../view/modulo.php?modulo=usuario&menu=consultar");
         }
     }
 
@@ -90,7 +87,7 @@ class ControlUsuario extends ControlGeral {
         $email = $dados[email][0];
         $telefone = $dados[telefone][0];
         $senha = $dados[senha][0];
-        
+
 
         #invocar métódo  e passar parâmetros
         $objUsuario = new modelUsuario();
@@ -118,7 +115,7 @@ class ControlUsuario extends ControlGeral {
 
         #extração de dados do usuário
         $id = $dados[id_usuario][0];
-        
+
         #invocar métódo  e passar parâmetros
         $objUsuario = new modelUsuario();
 

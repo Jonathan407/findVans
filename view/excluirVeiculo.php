@@ -7,8 +7,8 @@ foreach ($veiculo_excluir as $item_excluir) {
             <!-- dados do usuário -->
             <label for="codigo" class="control-label">Código</label>
             <input type="text" class="form-control" placeholder="código" name="dados[id_veiculo][]">
-            <label for="responsavel" class="control-label">Empresa Resposável</label>
-            <input type="text" class="form-control" placeholder="responsavel" name="dados[responsavel][]">
+            <label for="empresa" class="control-label">Empresa</label>
+            <input type="text" class="form-control" placeholder="empresa" name="dados[empresa][]">
             <label for="marca" class="control-label">Marca</label>
             <input type="text" class="form-control" placeholder="marca" name="dados[marca][]">
             <label for="modelo" class="control-label">Modelo</label>
